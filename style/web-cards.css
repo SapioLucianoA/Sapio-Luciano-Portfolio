@@ -1,0 +1,238 @@
+/* webs Cards */
+
+.div-webs {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.3rem;
+	flex-direction: column;
+
+}
+
+.div-web {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 0.2rem;
+	border-radius: 1rem;
+	text-decoration: none;
+	width: 300px;
+	height: 320px;
+	z-index: 3;
+	overflow: hidden;
+}
+.div-web h3{
+	font-size: 25px;
+}
+.div-text{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+}
+.div-web.AEvents {
+	border: rgb(217, 3, 104) solid 0.2rem;
+}
+
+.div-web.capybank {
+	border: rgba(114, 59, 13, 1) solid 0.2rem;
+}
+
+.div-web.eco {
+	border: rgb(42, 42, 221) solid 0.2rem;
+}
+
+.span-web {
+	position: absolute;
+	/* background-color: red; */
+	height: 700px;
+	width: 300px;
+	bottom: -3.3rem;
+	left: 5rem;
+	z-index: -2;
+	transform: rotate(-52deg);
+}
+
+.AEvents .span-web {
+	background-color: rgb(217, 3, 104);
+}
+
+.capybank .span-web {
+	background-color: rgba(114, 59, 13, 1);
+}
+
+.eco .span-web {
+	background-color: rgb(42, 42, 221);
+}
+
+
+
+/* imagenes */
+
+.div-web a>img {
+	width: 230px;
+	height: 80px;
+
+	border-radius: 1rem;
+}
+
+.capylogo {
+	width: 150px !important;
+	height: 150px !important;
+	margin-bottom: -1rem;
+}
+
+.div-web.eco a>img {
+	width: 130px !important;
+	height: 130px !important;
+}
+
+/* icons web */
+.div-web .html-icon {
+	position: absolute;
+	height: 25px;
+	bottom: 0.5rem;
+	right: 1rem;
+	margin-top: -1rem;
+}
+
+.div-web .icon-github {
+	position: absolute;
+	height: 25px;
+	bottom: 0.5rem;
+	left: 1rem;
+	margin-top: -1rem;
+}
+
+.div-web.AEvents a>.icon-github,
+.div-web.AEvents a>.html-icon {
+	color: rgb(217, 3, 104) !important;
+}
+
+.div-web.AEvents a>.icon-github:hover,
+.div-web.AEvents a>.html-icon:hover {
+	color: rgb(240, 59, 143) !important;
+}
+
+.div-web.AEvents a>.icon-github:active,
+.div-web.AEvents a>.html-icon:active {
+	color: rgb(242, 0, 113) !important;
+	filter: drop-shadow(rgb(240, 59, 143) 5px 5px 3px);
+}
+
+.div-web.capybank a>.icon-github,
+.div-web.capybank a>.html-icon {
+	color: rgba(114, 59, 13, 1) !important;
+}
+
+.div-web.capybank a>.icon-github:hover,
+.div-web.capybank a>.html-icon:hover {
+	color: rgb(182, 100, 33) !important;
+}
+
+.div-web.capybank a>.icon-github:active,
+.div-web.capybank a>.html-icon:active {
+	color: rgba(114, 59, 13, 1) !important;
+	filter: drop-shadow(rgb(182, 100, 33) 5px 5px 3px);
+}
+
+.div-web.eco a>.icon-github,
+.div-web.eco a>.html-icon {
+	color: rgb(42, 42, 221) !important;
+}
+
+.div-web.eco a>.icon-github:hover,
+.div-web.eco a>.html-icon:hover {
+	color: rgb(9, 9, 151) !important;
+}
+
+.div-web.eco a>.icon-github:active,
+.div-web.eco a>.html-icon:active {
+	color: rgb(42, 42, 221) !important;
+	filter: drop-shadow(rgb(9, 9, 151) 5px 5px 3px);
+}
+
+@media screen and (min-width: 530px) {
+	.div-webs{
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.div-web {
+		width: 480px;
+		height: 250px;
+		flex-direction: row;
+		
+	}
+	.div-text{
+		padding-top: 10px;
+		padding-left: 10px;
+		width: 55%;
+		
+	}
+	.div-web a>img{
+		position: absolute;
+		top: 2rem;
+		left: 1rem;
+		width: 200px;
+	}
+	.text-a{
+		width: 45%;
+	}
+	.capylogo{
+		position: absolute!important;
+		top: 1rem !important;
+		left: 1rem !important;
+	}
+	.span-web{
+		transform: rotate(35deg);
+		top: -16rem;
+		left: -6.5rem;
+	}
+	.span-web2{
+		position: absolute;
+		background-color: black;
+		height: 130px;
+		width: 300px;
+		z-index: -4;
+		transform: skewX(-40deg);
+		top: -4rem;
+		left: 3rem;
+	}
+	.span-web3{
+		position: absolute;
+		background-color: black;
+		height: 130px;
+		width: 300px;
+		z-index: -1;
+		transform: skewX(-30deg);
+		top: 12.7rem;
+		left: -8rem;
+	}
+	.span-web4{
+		position: absolute;
+		background-color: black;
+		height: 130px;
+		width: 300px;
+		z-index: -1;
+		transform: skewX(20deg);
+		top: 12.7rem;
+		left: 24rem;
+	}
+
+	/* AE spans */
+	.AEvents .span-web2, .AEvents .span-web3, .AEvents .span-web4 {
+		border: 0.2rem solid rgb(217, 3, 104);
+	}
+	/* DR CANIN CAPYBANK */
+	.capybank .span-web2, .capybank .span-web3, .capybank .span-web4 {
+		border: 0.2rem solid rgba(114, 59, 13, 1);
+	}
+	.eco .span-web2, .eco .span-web3, .eco .span-web4 {
+		border: 0.2rem solid rgb(42, 42, 221);
+	}
+
+}

@@ -1,0 +1,171 @@
+/* NAV */
+
+.nav-div.day{
+  background-color: rgb(215, 215, 200);
+  color: #1f1f1f;
+}
+.nav-div.night{
+  background-color: #1f1f1f;
+  color: rgb(215, 215, 200);
+}
+
+.nav-div li>a{
+  font-size: 20px;
+  padding: 0 10px 0 0;
+}
+
+.nav-div.night li>a{
+  color: rgb(215, 215, 200);
+}
+.nav-div.day  li>a:hover{
+  background-color: rgb(215, 215, 200);
+  text-decoration: underline #1f1f1f;
+}
+.nav-div.day li>a:active{
+  text-decoration: none;
+}
+.nav-div.night  li>a:hover{
+  background-color: #1f1f1f;
+  text-decoration: underline rgb(215, 215, 200);
+}
+.nav-div.night li>a:active{
+  background-color: #1f1f1f;
+  text-decoration: none;
+}
+
+/* Toggle button */
+  .nav-div.night .button-square-navbar{
+  background-color: #636161;
+  border: 0.1rem solid rgba(153, 153, 152, 0.75) ;
+}
+/* button x close nav-bar expand */
+.nav-div.night .x-button{
+  background-color: #b9b3b3!important;
+}
+/* Toggle nav */
+.nav-div.day .expand-nav{
+  background-color: rgba(215, 215, 200, 0.75)!important;
+}
+.div-100.night .expand-nav{
+  background-color: #1f1f1f8c!important;
+}
+
+
+
+/* togle button dark and light mode */
+.toggle-button{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.toggle-button label {
+  width: 50px;
+  height: 20px;
+  position: relative;
+  display: block;
+  background: beige;
+  border-radius: 20px;
+  box-shadow: inset 0px 5px 15px rgba(0,0,0,.4), inset 0 -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.toggle-button label::before{
+  content: "";
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0,0,0,.2);
+  transition: 0.3s;
+}
+.toggle-button input{
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.toggle-button input:checked + label{
+  background-color: #1f1f1f;
+}
+
+.toggle-button input:checked + label::before{
+  left: 27px;
+  background: linear-gradient(180deg, #4d4c4c, #3a3a3a);
+}
+.toggle-button label:active:before{
+  width: 20px;
+}
+.toggle-button label svg{
+  position: absolute;
+  width: 12px;
+  top: 4px;
+  z-index: 100;
+
+}
+.toggle-button svg.sun{
+  fill: beige;
+  left: 7px;
+  transition: 0.3s;
+  opacity: 1;
+  
+}
+.toggle-button svg.moon{
+  top: 2px;
+  right: 19px;
+  fill: #7e7e7e;
+  transition: 0.3s;
+  filter: blur(1px);
+  opacity: 0;
+
+}	
+
+.toggle-button input:checked + label svg.sun{
+  fill: #7e7e7e7e;
+  transform: translateX(10px);
+  opacity: 0;
+  filter: blur(1px);
+
+}
+.toggle-button input:checked + label svg.moon{
+  fill: beige;
+  display: block;
+  filter: blur(0);
+  opacity: 1;
+  transform: translateX(11px);
+}
+/* Button lenguage */
+.button-lenguage button{
+outline: none;
+border-radius: 1rem;
+width: 3.7rem;
+height: 29px;
+padding-bottom: 7px;
+}
+.button-lenguage.day button{
+color: #1f1f1f;
+background-color: beige;
+}
+.button-lenguage.day button:hover{
+background-color: #1f1f1f;
+color: beige;
+}
+.button-lenguage.day button:active{
+background-color: beige;
+color: #1f1f1f;
+}
+.button-lenguage.night button{
+background-color: #1f1f1f;
+color: beige;
+}
+
+.button-lenguage.night button:hover{
+border: solid beige 0.01rem;
+}
+.button-lenguage.night button:active{
+border: #1f1f1f solid 0.01rem;
+background-color: beige;
+color: #1f1f1f;
+
+}

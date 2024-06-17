@@ -1,0 +1,36 @@
+	*{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	
+
+	/* Generales */
+	div[id]{
+		scroll-margin-top: 7rem;
+	}
+	.div-100{
+		min-height: 100vh;
+	}
+	.div-100.night{
+		background-color: #1f1f1f;
+		color: white;
+	}
+	.div-100.day{
+		background-color: rgb(215, 215, 200);
+		color: #1f1f1f;
+	}
+	.h2-index{
+		margin-top: 3.5rem;
+	}
+	.div-principal{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	
+	}
+
+	p{
+		width: 80%;
+	}

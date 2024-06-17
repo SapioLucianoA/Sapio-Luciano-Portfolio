@@ -1,0 +1,266 @@
+/* Div Skill */
+.allskills{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+.container-skill{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.div-100.night .skill{
+  position: relative;
+  width: 145px;
+  height: 145px;
+  background-color: #1f1f1f;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  gap: 1rem;
+}
+.div-100.day .skill{
+  position: relative;
+  width: 145px;
+  height: 145px;
+  background-color: rgb(215, 215, 200);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  gap: 1rem;
+}
+.skill img{
+  width: 60px;
+  height: 60px;
+}
+.skill.javascript img{
+  width: 120px;
+  height: 60px;
+}
+.skill.java img{
+  width: 100px;
+  height: 100px;
+  margin-bottom: -0.9rem;
+}
+@keyframes spinner {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.spinner.boostrap{
+  z-index: -1;
+  position: absolute;
+  height: 120%;
+  width: 120%;
+  background-image:conic-gradient(
+  #00000000 0deg ,
+  #00000000 10deg,
+  #9500bb 50deg,
+
+  #00000000 50deg ,
+  #00000000 100deg,
+  #9500bb 150deg,
+
+  #00000000 150deg ,
+  #00000000 190deg,
+  #9500bb 240deg,
+
+  #00000000 240deg ,
+  #00000000 280deg,
+  #9500bb 330deg,
+  #00000000 330deg
+
+
+  );
+
+
+  animation: spinner 5s linear infinite;
+
+
+}
+
+.spinner.javascript{
+z-index: -1;
+position: absolute;
+height: 120%;
+width: 120%;
+background-image:conic-gradient(
+#00000000 0deg ,
+#00000000 10deg,
+#e2d600 50deg,
+
+#00000000 50deg ,
+#00000000 100deg,
+#e2d600 150deg,
+
+#00000000 150deg ,
+#00000000 190deg,
+#e2d600 240deg,
+
+#00000000 240deg ,
+#00000000 280deg,
+#e2d600 330deg,
+#00000000 330deg
+
+
+);
+
+
+animation: spinner 5s linear infinite;
+
+
+}
+.spinner.vue{
+z-index: -1;
+position: absolute;
+height: 120%;
+width: 120%;
+background-image:conic-gradient(
+#00000000 0deg ,
+#00000000 10deg,
+#0fa10a 50deg,
+
+#00000000 50deg ,
+#00000000 100deg,
+#0fa10a 150deg,
+
+#00000000 150deg ,
+#00000000 190deg,
+#0fa10a 240deg,
+
+#00000000 240deg ,
+#00000000 280deg,
+#0fa10a 330deg,
+#00000000 330deg
+
+
+);
+
+
+animation: spinner 5s linear infinite;
+
+
+}
+.spinner.java{
+z-index: -1;
+position: absolute;
+height: 120%;
+width: 120%;
+background-image:conic-gradient(
+#00000000 0deg ,
+#00000000 10deg,
+#0a0dbc 50deg,
+
+#00000000 50deg ,
+#00000000 100deg,
+#c81111 150deg,
+
+#00000000 150deg ,
+#00000000 190deg,
+#0a0dbc 240deg,
+
+#00000000 240deg ,
+#00000000 280deg,
+#c81111 330deg,
+#00000000 330deg
+
+
+);
+
+
+animation: spinner 5s linear infinite;
+
+
+}
+.spinner.typescript{
+z-index: -1;
+position: absolute;
+height: 120%;
+width: 120%;
+background-image:conic-gradient(
+#00000000 0deg ,
+#00000000 10deg,
+#0893e3 50deg,
+
+#00000000 50deg ,
+#00000000 100deg,
+#0893e3 150deg,
+
+#00000000 150deg ,
+#00000000 190deg,
+#0893e3 240deg,
+
+#00000000 240deg ,
+#00000000 280deg,
+#0893e3 330deg,
+#00000000 330deg
+
+
+);
+
+
+animation: spinner 5s linear infinite;
+
+
+}
+.spinner.angular{
+z-index: -1;
+position: absolute;
+height: 120%;
+width: 120%;
+background-image:conic-gradient(
+#00000000 0deg ,
+#00000000 10deg,
+#ed0808 50deg,
+
+#00000000 50deg ,
+#00000000 100deg,
+#ed0808 150deg,
+
+#00000000 150deg ,
+#00000000 190deg,
+#ed0808 240deg,
+
+#00000000 240deg ,
+#00000000 280deg,
+#ed0808 330deg,
+#00000000 330deg
+
+
+);
+
+
+animation: spinner 5s linear infinite;
+
+
+}
+@media screen and (min-width: 400px) and (max-width: 1000px){
+.allskills{
+  flex-direction: row;
+  width: 100%;
+}
+}
+
+@media screen and (min-width: 1001px) {
+  .allskills{
+    flex-direction: row;
+    width: 70%;
+  }
+}

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapio Luciano | Portfolio</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/tecnologies.css">
+    <link rel="stylesheet" href="./style/social-media.css">
+    <link rel="stylesheet" href="./style/nav-bar.css">
+    <link rel="stylesheet" href="./style/web-cards.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <div id="app">
+            <div class="div-100" v-bind:class="sun ? 'night' : 'day'">
+                <nav class="navbar navbar-expand-lg fixed-top nav-div" v-bind:class="sun ? 'night' : 'day'">
+                    <div class="container-fluid ">
+                        <a class="navbar-brand" v-bind:class="sun ? 'text-light' : 'text-dark' " href="#aboutme">Sapio
+                            Luciano
+                            portfolio</a>
+                        <button class="navbar-toggler button-square-navbar" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-end expand-nav" tabindex="-1" id="offcanvasNavbar"
+                            aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"
+                                    v-bind:class="sun ? 'text-light' : 'text-dark'">
+                                    {{english ? 'Sections and Options' : 'Sectiones y Opciones'}}</h5>
+                                <button type="button" class="btn-close x-button" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end flex-grow-1 gap-3 pe-3">
+                                    <li class="nav-item">
+                                        <a class="navbar-brand" href="#aboutMe">{{ english ? 'About Me' : '¿Quién Soy?'
+                                            }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#technologies" class="navbar-brand">{{english ? 'Technologies':
+                                            'Tecnologías'}}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="navbar-brand" href="#proyects">{{ english ? 'Proyects' : 'Proyectos'
+                                            }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#contact" class="navbar-brand">{{english ? 'Contact Me':
+                                            'Contáctame'}}</a>
+                                    </li>
+                                    <li class="button-lenguage nav-item" v-bind:class="sun ? 'night' : 'day'">
+                                        <button @click="cambioDeLenguaje">{{ english ? 'Eng ' : 'Esp' }} <svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
+                                                <path
+                                                    d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
+                                            </svg> </button>
+                                    </li>
+                                    <li class="toggle-button  nav-item">
+                                        <input type="checkbox" name="changeColor" id="changeColor"
+                                            @click="cambioDeColor" :checked="sun">
+                                        <label for="changeColor">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="sun"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class=" moon" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
+                                                <path
+                                                    d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z" />
+                                            </svg>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- DIV PRINCIPAL ESP -->
+                <h2 class="text-center fw-bold h2-index">{{english ? 'About Me' : 'Sobre Mí'}}</h2>
+                <div class="div-principal" v-if="english == false" id="aboutMe">
+                    <p> <span class="ms-3">Hola, Soy</span> <span class="fw-bold text-decoration-underline">Sapio
+                            Luciano</span>,
+                        Desarrollador Web Full Stack Java y sobre todo, un gran apasionado a la programación
+                        💻.
+                    </p>
+                    <p> <span class="ms-3">Cuento</span> con experiencia en <span class="fw-bold">metodología
+                            agile</span> y <span class="fw-bold">técnica
+                            Scrum</span> 📋, en tecnologías como <span class="fw-bold">HTML, CSS Boostrap, JavaScript,
+                            VUE, Angular
+                            ,JAVA,
+                            SpringBoot y PostgreSQL</span> 📚. </p>
+                    <p><span class="ms-3">🎯</span> Mi objetivo profesional es seguir aprendiendo y creciendo como
+                        programador.
+                    </p>
+                    <p><span class="ms-3">🙋‍♂️</span> Estoy abierto a nuevas oportunidades laborales y a conectar con
+                        otros
+                        profesionales del sector. Si
+                        quieres saber más sobre mí, no dudes en contactarme tanto por mail como por telefono.</p>
+                </div>
+                <!-- DIV PRINCIPAL ENG -->
+                <div class="div-principal" v-if="english == true" id="aboutMe">
+                    <p><span class="ms-3">HI!, I’m</span> <span class="fw-bold text-decoration-underline">Sapio
+                            Luciano</span>,
+                        Full Stack Java Web Developer and above all, a great programming enthusiast 💻.
+                    </p>
+                    <p> <span class="ms-3">have</span> experience in <span class="fw-bold">Agile methodology and Scrum
+                            technique
+                            📋</span>I, in technologies
+                        such as <span class="fw-bold">HTML, CSS Bootstrap, VUE, Angular, JavaScript, JAVA, SpringBoot,
+                            PostgreSQL
+                            📚.</span></p>
+                    <p><span class="ms-3">🎯</span> My professional goal is to continue learning and growing as a
+                        programmer.
+                    </p>
+                    <p><span class="ms-3">🙋‍♂️</span> I am open to new job opportunities and to connect with other
+                        professionals
+                        in the sector. If you want
+                        to know more about me, you can contact me by email or phone.</p>
+                </div>
+                <!-- DIV TECNOLOGIAS -->
+                <h2 class="text-center fw-bold ">{{english ? 'Technologies' : 'Tecnologías'}}</h2>
+                <div class="d-flex justify-content-center align-items-center w-100" id="technologies">
+                    <div class="allskills">
+                        <div class="container-skill">
+                            <span class="spinner javascript"></span>
+                            <div class="skill javascript">
+                                <img src="./images/JavaScript_logo_PNG3.png" alt="JavaScript Logo">
+                                <h3>JavaScript</h3>
+                            </div>
+                        </div>
+                        <div class="container-skill">
+                            <span class="spinner java"></span>
+                            <div class="skill java">
+                                <img src="./images/javalogo.png" alt="Java Logo">
+                                <h3 class="mb-3">Java</h3>
+                            </div>
+                        </div>
+                        <div class="container-skill">
+                            <span class="spinner typescript"></span>
+                            <div class="skill javascript">
+                                <img src="./images/Typescript.png" alt="typescript Logo">
+                                <h3>Typescript</h3>
+                            </div>
+                        </div>
+                        <div class="container-skill">
+                            <span class="spinner vue"></span>
+                            <div class="skill">
+                                <img src="./images/VUELogo.png" alt="vue  Logo">
+                                <h3>VUE</h3>
+                            </div>
+                        </div>
+                        <div class="container-skill">
+                            <span class="spinner angular"></span>
+                            <div class="skill">
+                                <img src="./images/AngularLogo.png" alt="Angular Logo">
+                                <h3>Angular</h3>
+                            </div>
+                        </div>
+                        <div class="container-skill">
+                            <span class="spinner vue"></span>
+                            <div class="skill javascript">
+                                <img src="./images/springbootlogo.png " alt="springboot Logo">
+                                <h3>SpringBoot</h3>
+                            </div>
+                        </div>
+                        <div class="container-skill">
+                            <span class="spinner typescript"></span>
+                            <div class="skill java">
+                                <img src="./images/AxiosLogo.png" alt="Axios Logo">
+                                <h3>Axios</h3>
+                            </div>
+                        </div>
+                        <div class="container-skill">
+                            <span class="spinner boostrap"></span>
+                            <div class="skill">
+                                <img src="./images/bootstrap-logo.png" alt="Boostrap Logo">
+                                <h3>Boostrap</h3>
+                            </div>
+                        </div>
+                        <div class="container-skill">
+                            <span class="spinner typescript"></span>
+                            <div class="skill">
+                                <img src="./images/postgresql.png" alt="PostgreSQL Logo">
+                                <h3>PostgreSQL</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyectos -->
+                <h2 class="text-center fw-bold mb-3">{{english ? 'Proyects' : 'Proyectos'}}</h2>
+                <div class="div-webs gap-3" id="proyects">
+                    <!-- AE -->
+                    <div class="div-web AEvents gap-2">
+                        <span class="span-web"></span>
+                        <span class="span-web2"></span>
+                        <span class="span-web3"></span>
+                        <span class="span-web4"></span>
+                        <a href="https://sapio-luciano-amazing-events.vercel.app/index.html" class="text-a "
+                            target="_blank">
+                            <img src="./images/amazing-events.jpeg" alt="Amazing-Events-img"></a>
+                        <div class="div-text ">
+                            <h3 class="text-center">Amazing Events</h3>
+                            <p class="text-center">Boostrap, VUE, Axios, JavaScript</p>
+                        </div>
+                        <a href="https://github.com/SapioLucianoA/Sapio_Luciano_Sprint_5_Amazing_Events"
+                            target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-github" fill="currentColor"
+                                class="bi bi-github" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                            </svg>
+                        </a>
+                        <a href="https://sapio-luciano-amazing-events.vercel.app/index.html" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="html-icon"
+                                class="bi bi-globe" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- DR CANIN -->
+                    <div class="div-web capybank gap-2">
+                        <span class="span-web"></span>
+                        <span class="span-web2"></span>
+                        <span class="span-web3"></span>
+                        <span class="span-web4"></span>
+                        <a class="text-a" href="https://dr-canin-velcel-app.vercel.app/" target="_blank">
+                            <img src="./images/drCaninLogo.jpg" alt="Dr-Canin"></a>
+
+                        <div class="div-text">
+                            <h3 class="text-center">Petshop Dr. Canin</h3>
+                            <p class="text-center">Boostrap, VUE, JavaScript</p>
+                        </div>
+                        <a href="https://github.com/israelcarrion/PetShopDrCanin" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-github" fill="currentColor"
+                                class="bi bi-github" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                            </svg>
+                        </a>
+                        <a href="https://dr-canin-velcel-app.vercel.app/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="html-icon"
+                                class="bi bi-globe" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z" />
+                            </svg>
+                        </a>
+
+                    </div>
+                    <!-- CAPYBANK -->
+                    <div class="div-web capybank gap-2">
+                        <span class="span-web"></span>
+                        <span class="span-web2"></span>
+                        <span class="span-web3"></span>
+                        <span class="span-web4"></span>
+                        <a href="https://capybank.onrender.com/web/index.html" target="_blank" class="text-a">
+                            <img src="images/CapybankLogo.png" alt="Capybank logo" class="capylogo"></a>
+                        <div class="div-text">
+                            <h3 class="text-center">Capybank</h3>
+                            <p class="text-center">Boostrap, Axios, JavaScript, VUE, JAVA, Springboot, SQL, PostgreSQL
+                            </p>
+                        </div>
+                        <a href="https://github.com/SapioLucianoA/Java17Homebanikg-Vue" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-github" fill="currentColor"
+                                class="bi bi-github" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                            </svg>
+                        </a>
+                        <a href="https://capybank.onrender.com/web/index.html" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="html-icon"
+                                class="bi bi-globe" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <!-- ECONOMY -->
+                    <div class="div-web eco">
+                        <span class="span-web"></span>
+                        <span class="span-web2"></span>
+                        <span class="span-web3"></span>
+                        <span class="span-web4"></span>
+                        <a href="https://economix-8573f.web.app/home" target="_blank" class="text-a">
+                            <img src="./images/Economics-PNG-Photo.png" class=" mb-1 " alt="Economy logo png"></a>
+                        <div class="div-text">
+                            <h3 class="text-center">My economy app</h3>
+                            <p class="text-center">Boostrap, Typescript, Angular, Firebase</p>
+                        </div>
+                        <a href="https://github.com/SapioLucianoA/My-Transaction-App" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-github" fill="currentColor"
+                                class="bi bi-github" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                            </svg>
+                        </a>
+                        <a href="https://economix-8573f.web.app/home" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="html-icon"
+                                class="bi bi-globe" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- SOCIAL MEDIA AND CONTACTS -->
+                <div class="d-flex justify-content-center align-items-center w-100 flex-column" id="contact">
+                    <h2 class="mb-4 mt-4">{{ english ? 'Contact me' : 'Contáctame' }} </h2>
+                    <div class="div-contact-social">
+                        <div class="div-tel-email">
+                            <p class="tel-email">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0" />
+                                </svg>
+                                <span class="fs-4 ">+</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-whatsapp"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                                </svg>
+                                <span class="fs-4 text-decoration-underline spantel">: +543794120368</span>
+                            </p>
+                            <p class="tel-email">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671" />
+                                    <path
+                                        d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791" />
+                                </svg>
+                                <span class="fs-4 text-decoration-underline spantel">: sapioluciano99@gmail.com</span>
+                            </p>
+
+                        </div>
+
+                        <div class="div-socialmedia">
+                            <h2>{{english ? 'Social Medias' : 'Redes Sociales'}}</h2>
+                            <div class="div-icons-socialmedia">
+                                <a href="https://www.instagram.com/sapio_lucky/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                        class="bi bi-instagram" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                                    </svg></a>
+                                <a href="https://github.com/SapioLucianoA" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                        class="bi bi-github" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                                    </svg></a>
+                                <a href="https://ar.linkedin.com/in/sapio-luciano" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                        class="bi bi-linkedin" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="./javaScript/index.js"></script>
+</body>
+
+</html>
