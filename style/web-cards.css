@@ -162,8 +162,8 @@
 		flex-wrap: wrap;
 	}
 	.div-web {
-		width: 480px;
-		height: 250px;
+		width: 500px;
+		height: 270px;
 		flex-direction: row;
 		
 	}
@@ -172,6 +172,10 @@
 		padding-left: 10px;
 		width: 55%;
 		
+	}
+	.div-text p{
+		font-size: 18px;
+		text-align: start;
 	}
 	.div-web a>img{
 		position: absolute;
@@ -209,7 +213,7 @@
 		width: 300px;
 		z-index: -1;
 		transform: skewX(-30deg);
-		top: 12.7rem;
+		top: 13.3rem;
 		left: -8rem;
 	}
 	.span-web4{
@@ -219,10 +223,26 @@
 		width: 300px;
 		z-index: -1;
 		transform: skewX(20deg);
-		top: 12.7rem;
+		top: 13.3rem;
 		left: 24rem;
 	}
+/* ICONS */
 
+.div-web .html-icon {
+	position: absolute;
+	height: 30px;
+	bottom: 0.5rem;
+	right: 1rem;
+	margin-top: -1rem;
+}
+
+.div-web .icon-github {
+	position: absolute;
+	height: 30px;
+	bottom: 0.5rem;
+	left: 1rem;
+	margin-top: -1rem;
+}
 	/* AE spans */
 	.AEvents .span-web2, .AEvents .span-web3, .AEvents .span-web4 {
 		border: 0.2rem solid rgb(217, 3, 104);
