@@ -38,4 +38,10 @@
 	.div-principal p{
 		font-size: 20px;
 	}
+	.text-light{
+		color: white !important;
+	}
+	.text-dark{
+		color: #1f1f1f !important;
+	}
 }
